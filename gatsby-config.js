@@ -33,6 +33,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'typography.config.js'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-layout',
       options: {
         component: require.resolve('./src/components/layout.js')

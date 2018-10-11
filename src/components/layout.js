@@ -7,6 +7,8 @@ import Nav from './nav'
 import Page from './page'
 import { StaticQuery, graphql } from 'gatsby'
 
+import 'typeface-source-sans-pro'
+
 const Layout = ({ head, children }) => (
   <Background>
     <Helmet
