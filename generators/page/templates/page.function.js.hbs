@@ -1,0 +1,43 @@
+import React from 'react'
+{{#if static}}
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+{{/if}}
+
+const {{ pascalCase name }} = ({{#if static}}{ data }{{/if}}) => {
+  return (
+    <>
+      <h1>{{ titleCase name }} Page</h1>
+      <p>This is the {{ name }} page.</p>
+      {{#if static}}
+      <p>Static data: {data}</p>
+      {{/if}}
+    </>
+  )
+}
+
+{{#if static}}
+{{ pascalCase name }}.propTypes = {
+  data: PropTypes.object
+}
+
+{{ pascalCase name }}.defaultProps = {
+  data: {}
+}
+
+{{/if}}
+export default {{ pascalCase name }}
+
+export const frontmatter = {
+  label: '{{ lowerCase name }}',
+  path: '/{{ kebabCase name }}',
+  precedence: {{ precedence }}
+}
+{{#if static}}
+
+export const pageQuery = graphql`
+  query {
+
+  }
+`
+{{/if}}

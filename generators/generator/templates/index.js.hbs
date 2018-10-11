@@ -1,0 +1,19 @@
+module.exports = plop => {
+  plop.setGenerator('{{ kebabCase name }}', {
+    description: '{{ pascalCase name }}',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is the {{ name }}'s name?"
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: '../{{ path }}/\{{ kebabCase name }}/index.js',
+        templateFile: 'templates/index.js.hbs'
+      }
+    ]
+  })
+}

@@ -77,3 +77,12 @@ yarn storybook:build
 
 Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.
 Also bear in mind that commit messages must conform to the [conventional commits specification](https://www.conventionalcommits.org/); to this end, the repo uses [commitlint](http://marionebl.github.io/commitlint/) to ensure this.
+
+### File generation
+
+The project uses [plop](https://plopjs.com) to generate boilerplate when scaffolding new functionality, for example when adding a new component.
+Plop may be run using
+
+```shell
+yarn generate
+```
