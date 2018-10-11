@@ -1,22 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-const Page = ({ children }) => (
-  <div
-    style={{
-      background: 'white',
-      maxWidth: '960px',
-      margin: 'auto',
-      padding: '3rem',
-      borderRadius: '3rem'
-    }}
-  >
-    {children}
-  </div>
-)
-
-Page.propTypes = {
-  children: PropTypes.node
-}
+const Page = styled.div({
+  background: 'white',
+  maxWidth: '960px',
+  margin: 'auto',
+  padding: '3rem',
+  borderRadius: '3rem',
+  '& > :last-child': {
+    marginBottom: 0
+  }
+})
 
 export default Page

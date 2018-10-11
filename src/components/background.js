@@ -1,21 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-const Background = ({ children }) => (
-  <div
-    style={{
-      background: 'darksalmon',
-      width: '100%',
-      height: '100%',
-      position: 'absolute'
-    }}
-  >
-    {children}
-  </div>
-)
-
-Background.propTypes = {
-  children: PropTypes.node
-}
+const Background = styled.div({
+  background: 'darksalmon',
+  width: '100%',
+  height: '100%',
+  position: 'absolute'
+})
 
 export default Background

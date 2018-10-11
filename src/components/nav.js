@@ -1,17 +1,31 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+const NavItem = styled.li({
+  display: 'inline-block',
+  padding: '1em',
+  marginBottom: 0
+})
+
+const NavList = styled.ul({
+  listStyleType: 'none',
+  textAlign: 'center',
+  marginBottom: 0
+})
+
 const Nav = ({ items }) => (
-  <ul style={{ listStyleType: 'none', textAlign: 'center' }}>
+  <NavList>
     {items.map(({ label, path }) => (
-      <li style={{ display: 'inline-block', padding: '1em' }} key={label}>
+      <NavItem key={label}>
         <Link to={path} style={{ textDecoration: 'none', color: 'white' }}>
           {label}
         </Link>
-      </li>
+      </NavItem>
     ))}
-  </ul>
+  </NavList>
 )
 
 Nav.propTypes = {
