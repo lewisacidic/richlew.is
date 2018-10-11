@@ -84,6 +84,7 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -E GITPARAMS",
     "test": "jest",
-    "storybook": "start-storybook -c storybook --port 8001 --quiet"
+    "storybook": "start-storybook -c storybook --port 8001 --quiet",
+    "storybook:build": "build-storybook -c storybook -o public/storybook"
   }
 }
