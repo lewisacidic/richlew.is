@@ -1,0 +1,18 @@
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+
+import {{ pascalCase name }} from '.'
+
+const Static{{ pascalCase name }} = props => (
+  <StaticQuery
+    query={graphql`
+    query {
+    
+    }`}
+    render={data => {
+      return <{{ pascalCase name }} data={data} {...props} />
+    }}
+  />
+)
+
+export default Static{{ pascalCase name }}
