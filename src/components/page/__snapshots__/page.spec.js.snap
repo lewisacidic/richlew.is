@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Background works 1`] = `
+.c0 {
+  background: white;
+  max-width: 960px;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 3rem;
+}
+
+.c0 > :last-child {
+  margin-bottom: 0;
+}
+
+<div
+  class="c0"
+/>
+`;
