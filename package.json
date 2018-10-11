@@ -22,11 +22,15 @@
     "email": "richlewis42@users.noreply.github.com"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.2.0",
+    "@commitlint/config-conventional": "^7.1.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
   },
   "dependencies": {
@@ -41,6 +45,8 @@
     "start": "yarn dev",
     "start:prod": "yarn build && yarn serve",
     "lint": "eslint .",
-    "format": "yarn lint --fix"
+    "format": "yarn lint --fix",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GITPARAMS"
   }
 }

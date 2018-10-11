@@ -1,4 +1,5 @@
 # richlew.is
+
 Personal website for Rich Lewis.
 
 ## Commands
@@ -13,7 +14,7 @@ The development server may be run using
 yarn dev
 ```
 
-Or to run all development processes: 
+Or to run all development processes:
 
 ```shell
 yarn start
@@ -47,6 +48,8 @@ Code may be linted using [eslint](https://eslint.org) with
 yarn lint
 ```
 
+Code is automatically linted on commit using a precommit hook using [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged).
+
 ### Formatting
 
 Automatic code formatting using [prettier](https://prettier.io) may be run with
@@ -54,3 +57,8 @@ Automatic code formatting using [prettier](https://prettier.io) may be run with
 ```shell
 yarn format
 ```
+
+## Contributing
+
+Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.
+Also bear in mind that commit messages must conform to the [conventional commits specification](https://www.conventionalcommits.org/); to this end, the repo uses [commitlint](http://marionebl.github.io/commitlint/) to ensure this.
