@@ -21,6 +21,9 @@
     "url": "https://github.com/richlewis42/richlew.is/issues",
     "email": "richlewis42@users.noreply.github.com"
   },
+  "devDependencies": {
+    "prettier": "^1.14.3"
+  },
   "dependencies": {
     "gatsby": "^2.0.21",
     "react": "^16.5.2",
@@ -31,6 +34,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "start": "yarn dev",
-    "start:prod": "yarn build && yarn serve"
+    "start:prod": "yarn build && yarn serve",
+    "format": "prettier --write src/**/*.js"
   }
 }
