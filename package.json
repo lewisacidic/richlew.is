@@ -21,6 +21,14 @@
     "url": "https://github.com/richlewis42/richlew.is/issues",
     "email": "richlewis42@users.noreply.github.com"
   },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.3"
+  },
   "dependencies": {
     "gatsby": "^2.0.21",
     "react": "^16.5.2",
@@ -31,6 +39,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "start": "yarn dev",
-    "start:prod": "yarn build && yarn serve"
+    "start:prod": "yarn build && yarn serve",
+    "lint": "eslint .",
+    "format": "yarn lint --fix"
   }
 }

@@ -38,3 +38,19 @@ Or run then served with
 ```shell
 yarn start:prod
 ```
+
+### Linting
+
+Code may be linted using [eslint](https://eslint.org) with
+
+```shell
+yarn lint
+```
+
+### Formatting
+
+Automatic code formatting using [prettier](https://prettier.io) may be run with
+
+```shell
+yarn format
+```
