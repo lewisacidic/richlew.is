@@ -4,6 +4,7 @@ node_modules
 # build artifacts
 .cache
 public
+yarn-error.log
 
 # os specific artifacts
 .DS_Store
