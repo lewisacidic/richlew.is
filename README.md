@@ -1,4 +1,5 @@
 # richlew.is
+
 Personal website for Rich Lewis.
 
 ## Commands
@@ -13,7 +14,7 @@ The development server may be run using
 yarn dev
 ```
 
-Or to run all development processes: 
+Or to run all development processes:
 
 ```shell
 yarn start
@@ -46,6 +47,8 @@ Code may be linted using [eslint](https://eslint.org) with
 ```shell
 yarn lint
 ```
+
+Code is automatically linted on commit using a precommit hook using [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged).
 
 ### Formatting
 
