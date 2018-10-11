@@ -1,0 +1,24 @@
+{
+  "name": "richlew.is",
+  "author": {
+    "name": "Rich Lewis",
+    "email": "richlewis42@users.noreply.github.com",
+    "url": "https://richlew.is"
+  },
+  "description": "Personal website and blog",
+  "homepage": "https://richlew.is",
+  "license": "MIT",
+  "keywords": [
+    "personal website",
+    "blog",
+    "gatsby"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://@github.com/richlewis42/richlew.is.git"
+  },
+  "bugs": {
+    "url": "https://github.com/richlewis42/richlew.is/issues",
+    "email": "richlewis42@users.noreply.github.com"
+  }
+}
