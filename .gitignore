@@ -8,3 +8,6 @@ yarn-error.log
 
 # os specific artifacts
 .DS_Store
+
+# test reports
+reports
