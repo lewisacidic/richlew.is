@@ -35,9 +35,11 @@
   },
   "dependencies": {
     "gatsby": "^2.0.21",
+    "gatsby-plugin-react-helmet": "^3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0"
   },
   "scripts": {
     "dev": "gatsby develop",
