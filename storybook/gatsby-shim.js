@@ -1,3 +1,5 @@
+import { action } from '@storybook/addon-actions'
+
 global.__PATH_PREFIX__ = ''
 
 global.___loader = {
@@ -5,4 +7,4 @@ global.___loader = {
   hovering: () => {}
 }
 
-window.__navigate = () => {}
+window.___navigate = action('NavigateTo')
