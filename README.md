@@ -57,3 +57,8 @@ Automatic code formatting using [prettier](https://prettier.io) may be run with
 ```shell
 yarn format
 ```
+
+## Contributing
+
+Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.
+Also bear in mind that commit messages must conform to the [conventional commits specification](https://www.conventionalcommits.org/); to this end, the repo uses [commitlint](http://marionebl.github.io/commitlint/) to ensure this.

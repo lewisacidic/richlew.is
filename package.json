@@ -22,6 +22,8 @@
     "email": "richlewis42@users.noreply.github.com"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.2.0",
+    "@commitlint/config-conventional": "^7.1.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
@@ -44,6 +46,7 @@
     "start:prod": "yarn build && yarn serve",
     "lint": "eslint .",
     "format": "yarn lint --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GITPARAMS"
   }
 }
