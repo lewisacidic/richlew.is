@@ -1,5 +1,9 @@
 # dependencies
 node_modules
 
+# build artifacts
+.cache
+public
+
 # os specific artifacts
 .DS_Store

@@ -20,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/richlewis42/richlew.is/issues",
     "email": "richlewis42@users.noreply.github.com"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.21",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "start": "yarn dev",
+    "start:prod": "yarn build && yarn serve"
   }
 }
