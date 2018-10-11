@@ -58,6 +58,21 @@ Automatic code formatting using [prettier](https://prettier.io) may be run with
 yarn format
 ```
 
+### Storybook
+
+The components of the website are detailed in a [storybook](https://storybook.js.org).
+This may be run using:
+
+```shell
+yarn storybook
+```
+
+It can be built using
+
+```shell
+yarn storybook:build
+```
+
 ## Contributing
 
 Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.

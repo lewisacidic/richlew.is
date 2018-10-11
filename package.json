@@ -31,6 +31,12 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.2.0",
     "@commitlint/config-conventional": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.0-alpha.24",
+    "@storybook/addon-knobs": "^4.0.0-alpha.24",
+    "@storybook/addon-options": "^4.0.0-alpha.24",
+    "@storybook/addon-viewport": "^4.0.0-alpha.24",
+    "@storybook/addons": "^4.0.0-alpha.24",
+    "@storybook/react": "^4.0.0-alpha.24",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -77,6 +83,8 @@
     "format": "yarn lint --fix",
     "precommit": "lint-staged",
     "commitmsg": "commitlint -E GITPARAMS",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -c storybook --port 8001 --quiet",
+    "storybook:build": "build-storybook -c storybook -o public/storybook"
   }
 }
