@@ -33,4 +33,9 @@ Nav.propTypes = {
     PropTypes.shape({ label: PropTypes.string, path: PropTypes.string })
   )
 }
+
+Nav.defaultProps = {
+  items: []
+}
+
 export default Nav
