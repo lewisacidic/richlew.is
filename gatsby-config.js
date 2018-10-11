@@ -44,6 +44,14 @@ module.exports = {
       options: {
         component: require.resolve('./src/components/layout.js')
       }
-    }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: 'src'
+      }
+    },
+    'gatsby-transformer-javascript-frontmatter'
   ]
 }

@@ -9,7 +9,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import 'typeface-source-sans-pro'
 
-const Layout = ({ head, children }) => (
+const Layout = ({ head, navItems, children }) => (
   <Background>
     <Helmet
       title={head.title}
@@ -18,12 +18,7 @@ const Layout = ({ head, children }) => (
         { name: 'keywords', content: head.keywords }
       ]}
     />
-    <Nav
-      items={[
-        { path: '/', label: 'home' },
-        { path: '/second', label: 'second' }
-      ]}
-    />
+    <Nav items={navItems} />
     <Page>{children}</Page>
   </Background>
 )
@@ -40,6 +35,7 @@ Layout.propTypes = {
       )
     )
   }),
+  navItems: Nav.propTypes.items,
   children: PropTypes.node
 }
 
@@ -54,9 +50,29 @@ const StaticLayout = props => (
             keywords
           }
         }
+        allJavascriptFrontmatter(
+          sort: { fields: [frontmatter___precedence], order: ASC }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                label
+                path
+              }
+            }
+          }
+        }
       }
     `}
-    render={data => <Layout head={data.site.siteMetadata} {...props} />}
+    render={data => (
+      <Layout
+        head={data.site.siteMetadata}
+        navItems={data.allJavascriptFrontmatter.edges.map(
+          ({ node }) => node.frontmatter
+        )}
+        {...props}
+      />
+    )}
   />
 )
 

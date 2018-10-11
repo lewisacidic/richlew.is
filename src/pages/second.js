@@ -8,3 +8,9 @@ const Page = () => (
 )
 
 export default Page
+
+export const frontmatter = {
+  label: 'second',
+  path: '/second',
+  precedence: 10
+}
