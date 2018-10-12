@@ -92,7 +92,7 @@
     "test:unit": "yarn test --projects jest.unit.config.js",
     "test:unit:ci": "yarn test:unit --ci --runInBand",
     "test:e2e": "yarn test --projects jest.e2e.config.js",
-    "test:e2e:ci": "yar test:e2e --ci --runInBand",
+    "test:e2e:ci": "yarn test:e2e --ci --runInBand",
     "test:lint": "yarn test --projects jest.lint.config.js",
     "test:lint:ci": "yarn test:lint --ci --runInBand",
     "storybook": "start-storybook -c storybook --port 8001 --quiet",

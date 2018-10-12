@@ -26,6 +26,19 @@ jobs:
           paths:
             - '*'
 
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Build Production App
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - public
+        
   unit_tests:
     <<: *defaults
     steps:
@@ -33,7 +46,20 @@ jobs:
           at: ~/app
       - run:
           name: Run Unit Tests
-          command: yarn test:unit
+          command: yarn test:unit:ci
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
+  e2e_tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Run End-to-End Tests
+          command: yarn test:e2e:ci
       - store_test_results:
           path: reports/junit
       - store_artifacts:
@@ -47,3 +73,9 @@ workflows:
       - unit_tests:
           requires:
             - bootstrap
+      - build:
+          requires:
+            - bootstrap
+      - e2e_tests:
+          requires:
+            - build
