@@ -50,6 +50,7 @@
     "jest-html-reporter": "^2.4.2",
     "jest-image-snapshot": "^2.5.0",
     "jest-junit": "^5.2.0",
+    "jest-runner-eslint": "^0.6.0",
     "jest-styled-components": "^6.2.1",
     "lint-staged": "^7.3.0",
     "plop": "^2.1.0",
@@ -90,6 +91,7 @@
     "test": "jest",
     "test:unit": "yarn test --projects jest.unit.config.js",
     "test:e2e": "yarn test --projects jest.e2e.config.js",
+    "test:lint": "yarn test --projects jest.lint.config.js",
     "storybook": "start-storybook -c storybook --port 8001 --quiet",
     "storybook:build": "build-storybook -c storybook -o public/storybook",
     "generate": "plop --plopfile=generators/index.js"
