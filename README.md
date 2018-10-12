@@ -73,10 +73,27 @@ It can be built using
 yarn storybook:build
 ```
 
-## Contributing
+### Testing
 
-Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.
-Also bear in mind that commit messages must conform to the [conventional commits specification](https://www.conventionalcommits.org/); to this end, the repo uses [commitlint](http://marionebl.github.io/commitlint/) to ensure this.
+Unit tests are written using [react-testing-library](https://github.com/kentcdodds/react-testing-library) and run using [jest](https://jestjs.io).
+They may be run using
+
+```shell
+yarn test:unit
+```
+
+Integration tests are written using [puppeteer](https://pptr.dev/) and [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer).
+They may be run with
+
+```shell
+yarn test:e2e
+```
+
+Finally, both kinds of tests may be run simultaneously using
+
+```shell
+yarn test
+```
 
 ### File generation
 
@@ -86,3 +103,8 @@ Plop may be run using
 ```shell
 yarn generate
 ```
+
+## Contributing
+
+Pull requests are welcome! Please stick to the code formats enforced by the linting tooling.
+Also bear in mind that commit messages must conform to the [conventional commits specification](https://www.conventionalcommits.org/); to this end, the repo uses [commitlint](http://marionebl.github.io/commitlint/) to ensure this.
