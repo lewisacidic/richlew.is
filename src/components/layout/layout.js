@@ -1,25 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { ThemeProvider } from 'styled-components'
 
 import Background from '../background'
 import Nav from '../nav/nav'
 import Page from '../page/page'
-
-import 'typeface-source-sans-pro'
+import theme from '../../theme'
 
 const Layout = ({ head, navItems, children }) => (
-  <Background>
-    <Helmet
-      title={head.title}
-      meta={[
-        { name: 'description', content: head.description },
-        { name: 'keywords', content: head.keywords }
-      ]}
-    />
-    <Nav items={navItems} />
-    <Page>{children}</Page>
-  </Background>
+  <ThemeProvider theme={theme}>
+    <Background>
+      <Helmet
+        title={head.title}
+        meta={[
+          { name: 'description', content: head.description },
+          { name: 'keywords', content: head.keywords }
+        ]}
+      />
+      <Nav items={navItems} />
+      <Page>{children}</Page>
+    </Background>
+  </ThemeProvider>
 )
 
 Layout.propTypes = {
