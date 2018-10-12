@@ -1,0 +1,31 @@
+version: 2
+
+jobs: 
+  test:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:10.11.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - run:
+          name: Run Unit Tests
+          command: yarn test:unit
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - test
