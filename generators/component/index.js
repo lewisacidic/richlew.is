@@ -11,7 +11,7 @@ module.exports = plop => {
         type: 'list',
         name: 'kind',
         message: 'What type of component do you need?',
-        choices: ['function', 'class']
+        choices: ['function', 'class', 'styled']
       },
       {
         type: 'confirm',
