@@ -1,0 +1,97 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/app    
+  docker:
+    - image: circleci/node:10.11.0-browsers
+  environment:
+    TERM: xterm
+
+jobs: 
+  bootstrap:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - '*'
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Build Production App
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - public
+        
+  unit_tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Run Unit Tests
+          command: yarn test:unit:ci
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Run Linting
+          command: yarn test:lint:ci
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
+  e2e_tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Run End-to-End Tests
+          command: yarn test:e2e:ci
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - bootstrap
+      - unit_tests:
+          requires:
+            - bootstrap
+      - lint:
+          requires:
+            - bootstrap
+      - build:
+          requires:
+            - bootstrap
+      - e2e_tests:
+          requires:
+            - build
