@@ -34,7 +34,7 @@ and served using
 yarn serve
 ```
 
-Or run then served with
+Or in one command:
 
 ```shell
 yarn start:prod
