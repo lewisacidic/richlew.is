@@ -52,6 +52,19 @@ jobs:
       - store_artifacts:
           path: reports
 
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Run Linting
+          command: yarn test:lint:ci
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports
+
   e2e_tests:
     <<: *defaults
     steps:
@@ -71,6 +84,9 @@ workflows:
     jobs:
       - bootstrap
       - unit_tests:
+          requires:
+            - bootstrap
+      - lint:
           requires:
             - bootstrap
       - build:
