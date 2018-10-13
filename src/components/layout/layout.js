@@ -8,9 +8,9 @@ import Nav from '../nav/nav'
 import Page from '../page/page'
 import theme from '../../theme'
 
-const Layout = ({ head, navItems, children }) => (
+const Layout = ({ head, navItems, children, background }) => (
   <ThemeProvider theme={theme}>
-    <Background>
+    <Background background={background}>
       <Helmet
         title={head.title}
         meta={[
@@ -37,6 +37,7 @@ Layout.propTypes = {
     )
   }),
   navItems: Nav.propTypes.items,
+  background: PropTypes.string,
   children: PropTypes.node
 }
 
@@ -48,7 +49,8 @@ Layout.defaultProps = {
   navItems: [
     { label: 'home', path: '/', icon: 'home' },
     { label: 'contact', path: '/contact', icon: 'envelope' }
-  ]
+  ],
+  background: 'spring'
 }
 
 export default Layout

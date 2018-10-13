@@ -34,6 +34,7 @@ const StaticLayout = props => (
         navItems={data.allJavascriptFrontmatter.edges.map(
           ({ node }) => node.frontmatter
         )}
+        background="autumn"
         {...props}
       />
     )}

@@ -36,7 +36,10 @@ export const colors = {
 }
 
 export const backgrounds = {
-  autumn: 'linear-gradient(45deg, #ff9a9e, #fad0c4)'
+  spring: 'linear-gradient(120deg, #8ddad5, #00cdac)',
+  summer: 'linear-gradient(120deg, #f6d365, #fda085)',
+  autumn: 'linear-gradient(120deg, #ff9068, #fd746c)',
+  winter: 'linear-gradient(120deg, #89dafe, #66a6ff)'
 }
 
 export default {
