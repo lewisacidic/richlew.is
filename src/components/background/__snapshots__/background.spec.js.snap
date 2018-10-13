@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Background works 1`] = `
+exports[`Background renders correctly 1`] = `
 .c0 {
-  background: darksalmon;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -10,5 +9,6 @@ exports[`Background works 1`] = `
 
 <div
   class="c0"
+  data-testid="test-background"
 />
 `;
